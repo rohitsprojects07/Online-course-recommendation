@@ -1,6 +1,6 @@
 # LearnSphere 🎓
 
-LearnSphere is a comprehensive e-learning platform that allows users to explore, search, and enroll in various online courses. It includes features like user authentication, a course marketplace, credit management, and personalized course recommendations.
+LearnSphere is a comprehensive e-learning platform that allows users to explore, search, and enroll in various online courses. It includes features like user authentication, a course marketplace, credit management, and course recommendations.
 
 ## Features ✨
 
