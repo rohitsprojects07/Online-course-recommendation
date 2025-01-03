@@ -180,41 +180,7 @@ app.get("/users/credits/:userId", async (req, res) => {
   }
 });
 
-// app.post("/enroll", async (req, res) => {
-//   const { userId, courseIds } = req.body;
 
-//   try {
-//     // Fetch total cost of selected courses
-//     const [courseDetails] = await db.query(
-//       `SELECT SUM(price) AS totalCost FROM courses WHERE id IN (?)`,
-//       [courseIds]
-//     );
-
-//     const totalCost = courseDetails[0].totalCost;
-
-//     // Fetch user credits
-//     const [userDetails] = await db.query("SELECT credits FROM users WHERE id = ?", [userId]);
-
-//     if (userDetails.length === 0) return res.status(404).send("User not found!");
-
-//     const userCredits = userDetails[0].credits;
-
-//     if (userCredits < totalCost) {
-//       return res.status(400).send("Not enough credits to enroll in selected courses.");
-//     }
-
-//     // Deduct credits and enroll user in courses
-//     await db.query("UPDATE users SET credits = ? WHERE id = ?", [userCredits - totalCost, userId]);
-//     for (const courseId of courseIds) {
-//       await db.query("INSERT INTO enrollments (user_id, course_id) VALUES (?, ?)", [userId, courseId]);
-//     }
-
-//     res.status(200).send("Enrollment successful!");
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).send("Error enrolling in courses.");
-//   }
-// });
 
 app.post("/enroll", async (req, res) => {
   const { courses, totalCost, username } = req.body;
